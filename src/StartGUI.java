@@ -6,19 +6,20 @@ import java.awt.event.ActionListener;
 public class StartGUI {
 
     public static Stop_watch stopwatch = new Stop_watch();
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
 
         Timer timer = new Timer(1000, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // Update the stopwatch display
-                GUIArray.frame.setTitle(GUIArray.updateLabel(GUIArray.bombsFlagged) + "     Time: " + Stop_watch.timeString);
+                GUIArray.frame
+                        .setTitle(GUIArray.updateLabel(GUIArray.bombsFlagged) + "     Time: " + Stop_watch.timeString);
             }
         });
 
-
         GUIArray.frame.getContentPane().removeAll();
         GUIArray.frame.repaint();
-        //flag so the
+        // flag so the
         Main.bombClicked = true;
         GUIArray.frame.setSize(1000, 800);
         GUIArray.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -27,7 +28,7 @@ public class StartGUI {
         layeredPane.setPreferredSize(new Dimension(1000, 800));
 
         JPanel panel = new JPanel();
-        ImageIcon imageIcon = new ImageIcon("C:\\Users\\awcha\\OneDrive\\Pictures\\Screenshots\\Start.jpg");
+        ImageIcon imageIcon = new ImageIcon("src\\images\\Start.jpg");
         JLabel background = new JLabel(imageIcon);
         panel.add(background);
 
@@ -48,12 +49,11 @@ public class StartGUI {
                 GUIArray.bombsFlagged = 0;
                 Main.main(null);
 
-                stopwatch.timer.start();  // Start the stopwatch timer
-                timer.start();  // Start the display update timer
+                stopwatch.timer.start(); // Start the stopwatch timer
+                timer.start(); // Start the display update timer
                 GUIArray.putStopWatch();
             }
         };
-
 
         button.addActionListener(actionListener);
         buttonPanel.add(button);
@@ -63,7 +63,6 @@ public class StartGUI {
         buttonPanel.setOpaque(false);
         layeredPane.add(panel, JLayeredPane.DEFAULT_LAYER);
         layeredPane.add(buttonPanel, JLayeredPane.PALETTE_LAYER);
-
 
         GUIArray.frame.add(layeredPane);
 

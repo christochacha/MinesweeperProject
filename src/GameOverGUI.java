@@ -3,8 +3,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class GameOverGUI extends Stop_watch{
-    public static void main(String[] args){
+public class GameOverGUI extends Stop_watch {
+    public static void main(String[] args) {
 
         GUIArray.numButtonsClicked = 0;
         GUIArray.bombsFlagged = 0;
@@ -14,7 +14,7 @@ public class GameOverGUI extends Stop_watch{
 
         GUIArray.frame.getContentPane().removeAll();
         GUIArray.frame.repaint();
-        //flag so the
+        // flag so the
         Main.bombClicked = true;
         GUIArray.frame.setSize(1000, 800);
         GUIArray.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -23,7 +23,7 @@ public class GameOverGUI extends Stop_watch{
         layeredPane.setPreferredSize(new Dimension(1000, 800));
 
         JPanel panel = new JPanel();
-        ImageIcon imageIcon = new ImageIcon("C:\\Users\\awcha\\OneDrive\\Pictures\\Screenshots\\GameOverFinal.jpg");
+        ImageIcon imageIcon = new ImageIcon("src\\images\\GameOverFinal.jpg");
         JLabel background = new JLabel(imageIcon);
         panel.add(background);
 
@@ -45,7 +45,7 @@ public class GameOverGUI extends Stop_watch{
                 Main.resetGame();
                 GUIArray.numButtonsClicked = 0;
                 GUIArray.bombsFlagged = 0;
-                GUIArray.frame.setTitle("Mines swept: 0"+ "     Time: " + StartGUI.stopwatch.timeString);
+                GUIArray.frame.setTitle("Mines swept: 0" + "     Time: " + StartGUI.stopwatch.timeString);
             }
         };
 

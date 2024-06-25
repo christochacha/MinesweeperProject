@@ -2,8 +2,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 public class GameWonGUI {
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         GUIArray.numButtonsClicked = 0;
         GUIArray.bombsFlagged = 0;
@@ -13,7 +14,7 @@ public class GameWonGUI {
 
         GUIArray.frame.getContentPane().removeAll();
         GUIArray.frame.repaint();
-        //flag so the
+        // flag so the
         Main.bombClicked = true;
         GUIArray.frame.setSize(1000, 800);
         GUIArray.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -22,7 +23,7 @@ public class GameWonGUI {
         layeredPane.setPreferredSize(new Dimension(1000, 800));
 
         JPanel panel = new JPanel();
-        ImageIcon imageIcon = new ImageIcon("C:\\Users\\awcha\\OneDrive\\Pictures\\Screenshots\\GameWonFinal.jpg");
+        ImageIcon imageIcon = new ImageIcon("src\\images\\GameWonFinal.jpg");
         JLabel background = new JLabel(imageIcon);
         panel.add(background);
 
@@ -44,7 +45,7 @@ public class GameWonGUI {
                 Main.resetGame();
                 GUIArray.numButtonsClicked = 0;
                 GUIArray.bombsFlagged = 0;
-                GUIArray.frame.setTitle("Mines swept: 0"+ "     Time: " + StartGUI.stopwatch.timeString);
+                GUIArray.frame.setTitle("Mines swept: 0" + "     Time: " + StartGUI.stopwatch.timeString);
             }
         };
 
@@ -56,7 +57,6 @@ public class GameWonGUI {
         buttonPanel.setOpaque(false);
         layeredPane.add(panel, JLayeredPane.DEFAULT_LAYER);
         layeredPane.add(buttonPanel, JLayeredPane.PALETTE_LAYER);
-
 
         GUIArray.frame.add(layeredPane);
 
